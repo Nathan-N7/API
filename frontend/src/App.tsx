@@ -32,6 +32,8 @@ export default function App() {
       name: nameRef.current?.value,
       email: emailRef.current?.value
     })
+
+    setCustomers(allCustomers => [...allCustomers, response.data])
   }
 
   return (
