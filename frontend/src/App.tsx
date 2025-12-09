@@ -37,7 +37,15 @@ export default function App() {
   }
 
   async function handleDelete(id: string) {
-    alert(id);
+    try{
+      await api.delete("/customer", {
+        params: {
+          id: id,
+        }
+      })
+    } catch(err) {
+      console.log(err);
+    }
   }
 
   return (
